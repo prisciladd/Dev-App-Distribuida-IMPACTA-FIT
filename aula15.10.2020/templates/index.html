@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Jinja</title>
+</head>
+<body>
+    <h1>Framework Jinja</h1>
+    
+    {% if name != none %}
+    
+    <h2>Hello, {{name}}</h2>
+    
+    {%else%}
+
+    <h2>Hello, Stranger</h2>
+
+    {% endif %}
+
+    <h1>Exemplo de Laço For</h1>
+    
+    {% for l in range (1,10) %}
+
+    <h1>Valor, {{l}}</h1>
+    <br>
+    {% endfor %}
+
+    
+</body>
+</html>
