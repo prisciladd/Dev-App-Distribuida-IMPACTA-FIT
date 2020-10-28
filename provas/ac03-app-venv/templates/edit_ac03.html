@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Aluno</title>
+</head>
+
+<body>
+
+    <h1>Editar Aluno {{cliente.nome}}</h1>
+
+    <form action="/edit/{{cliente.ra}}" method="POST">
+
+        <input type="text" name="nome" value="{{cliente.nome}}" />
+        <input type="text" name="email" value="{{cliente.email}}" />
+        <input type="text" name="logradouro" value="{{cliente.logradouro}}" />
+        <input type="text" name="numero" value="{{cliente.numero}}" />
+        <input type="text" name="cep" value="{{cliente.cep}}" />
+        <input type="text" name="complemento" value="{{cliente.complemento}}" />
+                
+<br />
+
+<input type="submit" value="Enviar" />
+
+</form>
+
+</body>
+
+</html>
