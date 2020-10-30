@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Cadastro de Alunos</title>
+
+      
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Lista de Alunos</h1>
+      <p>Para adicionar um aluno clique no botão +</p>
+      <a href="/add" data-toggle="tooltip" title="Adicionar">
+
+        <img src="{{ url_for('static', filename='imagens/adicionar-ficheiro.png')}}">
+      </a>
+      
+    </div>
+  </div>
+  
+<div class="container">
+  <input class="form-control" id="myInput" type="text" placeholder="Pesquisar aluno.." width="90%">
+  <br>
+  
+
+  <table class="table table-bordered table-striped" align= "center" border="1" width="90%" >
+
+<thead>
+
+            <tr>
+              
+
+                <th><p class="text-center" >RA</p></th>
+                <th><p class="text-center">Nome</p></th>
+                <th><p class="text-center">E-mail</p></th>
+                <th><p class="text-center">Logradouro</p></th>
+                <th><p class="text-center">Nº</p></th>
+                <th><p class="text-center">CEP</p></th>
+                <th><p class="text-center">Complemento</p></th>
+                
+                <th><p class="text-center">Ações</p></th
+
+            </tr>
+</thead>
+
+<tbody id="myTable">
+
+    {% for a in alunos %} 
+
+    <tr>
+        <td>{{a.ra}}</td>
+        <td>{{a.nome}}</td> 
+        <td>{{a.email}}</td>
+        <td>{{a.logradouro}}</td>
+        <td>{{a.numero}}</td>
+        <td>{{a.cep}}</td>
+        <td>{{a.complemento}}</td>
+
+        <td align="center">
+
+          <a href="/edit/{{a.id}}" data-toggle="tooltip" title="Editar">
+
+              <img src="{{ url_for('static', filename='imagens/editar.png')}}">
+        </a>
+
+        <div class="alert alert-warning">
+          <strong>Deletar</strong>
+            <a href="/delete/{{a.id}}">
+            
+            <img src="{{ url_for('static', filename='imagens/bin.png')}}">
+        </a>
+      </div>
+        </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
+  
+
+</body>
+
+</html>

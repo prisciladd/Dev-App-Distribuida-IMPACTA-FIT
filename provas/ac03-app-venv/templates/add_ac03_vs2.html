@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>Cadastro de Alunos</title>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Cadastrar Aluno</h1>
+                    <p>Após preencher clique no botão Adicionar</p>
+        </div>
+      </div>
+      
+      <div class="container">
+
+    <table align= "center" border="1" width=90%>
+
+        <form action="/add"  method="POST">
+    
+        <tr>
+            <td>Digite seu R.A.</td>
+            <td><input type="text" name="ra" ></td>
+        </tr>
+        
+        <tr>
+            <td>Digite seu Nome</td>
+            <td><input type="text" name="nome" size=100></td>
+        </tr>
+        
+        <tr>
+            <td>Digite seu E-mail</td>
+            <td><input type="text" name="email" size=100/></td>
+        </tr>
+
+        <tr>
+            <td>Digite sua Rua</td>
+            <td><input type="text" name="logradouro"size=100/></td>
+        </tr>
+
+        <tr>
+            <td>Digite o Número de sua casa</td>
+            <td><input type="text" name="numero" /></td>
+        </tr>
+
+        <tr>
+            <td>Digite seu C.E.P.</td>
+            <td><input type="text" name="cep" /></td>
+        </tr>
+
+        <tr>
+            <td>Digite seu Complemento</td>
+            <td><input type="text" name="complemento" /> </td>
+        </tr>
+        
+        <tr>
+            <th colspan="2">
+                
+            
+                <button type="submit" class="btn btn-success" value="Enviar">Adicionar</button>    
+            
+                <a href="/">
+                    <button type="button" class="btn btn-info" >Voltar</button>    
+                </a>
+            </th>
+        </tr>
+
+</form>
+</table>
+</div>
+</body>
+</html>

@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastro de Aluno</title>
+    <title>Cadastro de Cliente</title>
 
 </head>
 
 <body>
-    <h1>Crud Aluno</h1>
-    <a href="/add">Adicionar Aluno</a>
+    <h1>Crud Cliente</h1>
+    <a href="/add">Adicionar Cliente</a>
 
     <table border="1" width="70%">
 
@@ -21,12 +21,8 @@
             <tr>
 
                 <th>Nome</th>
-                <th>e-mail</th>
-                <th>Logradouro</th>
-                <th>Nº</th>
-                <th>CEP</th>
-                <th>Complemento</th>
-
+                <th>Comentario</th>
+                
                 <th>Ações</th>
 
             </tr>
@@ -34,17 +30,13 @@
 
 <tbody>
 
-    {% for c in clientes %}
+    {% for c in clientes %} <!--alunos é objeto vindo do select da arquivo app-->
 
     <tr>
 
-        <td>{{c.nome}}</td> 
-        <td>{{c.email}}</td>
-        <td>{{c.logradouro}}</td>
-        <td>{{c.numero}}</td>
-        <td>{{c.cep}}</td>
-        <td>{{c.complemento}}</td>
-
+        <td>{{c.name}}</td> 
+        <td>{{c.comment}}</td>
+        
 <td>
 
             <a href="/edit/{{c.id}}">Editar</a> 
